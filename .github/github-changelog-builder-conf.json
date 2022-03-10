@@ -6,15 +6,17 @@
       },
       {
         "title": "## 🐛 Fixes",
-        "labels": ["bug", "compatibility"]
-      },
-      {
-        "title": "## 🪄 Misc. Improvements",
         "labels": ["fix"]
       },
       {
-        "title": "## 🧪 CI / Tests",
-        "labels": ["testing", "ci"],
+        "title": "## 🧪 Tests",
+        "labels": ["test"],
+      },
+      {
+        "title": "## 🧪 Tests and some 🪄 Magic",
+        "labels": ["test", "magic"],
+        "exclude_labels": ["no-magic"],
+        "exhaustive": true,
       }
     ],
     "ignore_labels": [
@@ -36,9 +38,23 @@
         "method": "match"
       }
     ],
-    "max_tags_to_fetch": 100,
-    "max_pull_requests": 100,
-    "max_back_track_time_days": 30,
+    "duplicate_filter": {
+      "pattern": "\\[ABC-....\\]",
+      "on_property": "title",
+      "method": "match"
+    },
+    "transformers": [
+      {
+        "pattern": "[\\-\\*] (\\[(...|TEST|CI|SKIP)\\])( )?(.+?)\n(.+?[\\-\\*] )(.+)",
+        "target": "- $4\n  - $6"
+      }
+    ],
+    "max_tags_to_fetch": 200,
+    "max_pull_requests": 200,
+    "max_back_track_time_days": 365,
+    "exclude_merge_branches": [
+      "Owner/qa"
+    ],
     "tag_resolver": {
       "method": "semver",
       "filter": {
@@ -46,4 +62,7 @@
         "flags": "gu"
       }
     },
+    "base_branches": [
+      "dev"
+    ]
 }
