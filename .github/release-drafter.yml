@@ -1,19 +1,41 @@
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
-template: |
-  # What's Changed
-  $CHANGES
-  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
 categories:
-  - title: 'Features'
-    label: 'type: feature'
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
   - title: 'Bug Fixes'
-    label: 'type: bug'
+    labels:
+      - 'bug'
+      - 'fix'
   - title: 'Misc. Improvements'
-    label: 'type: maintenance'
+    label: 'maintenance'
   - title: 'Documentation'
-    label: 'type: docs'
+    label: 'docs'
   - title: 'Other changes'
   - title: 'Operator Updates'
-    label: 'type: compatibility'
+    label: 'compatibility'
     collapse-after: 5
+
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&'
+
+# Version template: v"$MAJOR.$MINOR.$PATCH"
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
+
+template: |
+  ## Changes
+
+  $CHANGES
+
+  **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
