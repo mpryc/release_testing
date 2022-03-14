@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - main
 
   # pull_request required to auto label PRs
   pull_request:
