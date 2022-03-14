@@ -40,6 +40,12 @@ autolabeler:
   - label: 'docs'
     files:
       - '*.md'
+  - label: 'major'
+    title:
+      - '/major release/i'
+  - label: 'minor'
+    title:
+      - '/minor release/i'
 
 template: |
   ## Changes
