@@ -17,6 +17,9 @@ categories:
     label: 'compatibility'
     collapse-after: 5
 
+exclude-labels:
+  - 'skip-changelog'
+
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 
@@ -32,6 +35,11 @@ version-resolver:
     labels:
       - 'patch'
   default: patch
+
+autolabeler:
+  - label: 'docs'
+    files:
+      - '*.md'
 
 template: |
   ## Changes
