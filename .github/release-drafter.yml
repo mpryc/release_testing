@@ -1,19 +1,19 @@
-name-template: 'v$RESOLVED_VERSION'
+name-template: 'v$RESOLVED_VERSION 🌈'
 tag-template: 'v$RESOLVED_VERSION'
 categories:
   - title: '🚀 Features'
     labels:
       - 'feature'
-  - title: 'Bug Fixes'
+  - title: '🐛 Bug Fixes'
     labels:
       - 'bug'
       - 'fix'
-  - title: 'Misc. Improvements'
+  - title: '🛠️ Misc. Improvements'
     label: 'maintenance'
-  - title: 'Documentation'
+  - title: '📖 Documentation'
     label: 'docs'
-  - title: 'Other changes'
-  - title: 'Operator Updates'
+  - title: '🔡 Other changes'
+  - title: '📦 Operator Updates'
     label: 'compatibility'
     collapse-after: 5
 
