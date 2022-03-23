@@ -14,6 +14,9 @@ jobs:
   release_drafter:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout pelorus
+        uses: actions/checkout@v2
+
       - uses: release-drafter/release-drafter@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
